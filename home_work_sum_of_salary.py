@@ -53,5 +53,3 @@ def total_salary(path):
 
     except TypeError:
         print("Невірні дані у файлі")
-
-print(total_salary(path))
