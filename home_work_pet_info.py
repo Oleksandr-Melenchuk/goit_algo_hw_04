@@ -69,9 +69,3 @@ def get_cats_info(path):
 
     
     return cats_list
-
-    
-
-
-
-print(get_cats_info(path))
