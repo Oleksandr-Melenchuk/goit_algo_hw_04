@@ -2,11 +2,10 @@ from pathlib import Path
 import re
 
 
-path = Path('')
-
-
 """ Функція аналізує файл і повертає загальну та середню суму з/п """
 def total_salary(path):
+
+    path = Path(path)
 
     # Перевірка чи вказаний шлях до файлу або шлях веде до папки
     if not path.exists():
@@ -53,5 +52,3 @@ def total_salary(path):
 
     except TypeError:
         print("Невірні дані у файлі")
-
-print(total_salary(path))

@@ -1,3 +1,5 @@
+from input_data import correct_number
+
 def hello() -> None:
     print('How i can help you?')
 
@@ -12,9 +14,11 @@ def add_contact(contact, args):
     if name in contact:
         return "User already added"
     
-    contact[name] = phone
-    
-    return 'Contact added.'
+    if correct_number(phone):
+        contact[name] = phone
+        return 'Contact added.'
+    else:
+        return 'Invalid symbols in number'
     
 #Змінює значення phone якщо name у списку
 def change_contact(contact, args):
@@ -26,10 +30,12 @@ def change_contact(contact, args):
     if name not in contact:
         return "User not found"
     
-    contact[name] = phone
-    return "Сontact updated"
+    if correct_number(phone):
+        contact[name] = phone
+        return "Сontact updated"
+    else:
+        return 'Invalid symbols in number'
 
-        
 #Повертає номер якщо name у списку
 def show_phone(contacts, users_request):
     name = users_request[0]

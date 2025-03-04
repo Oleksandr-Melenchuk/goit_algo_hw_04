@@ -1,11 +1,12 @@
 from pathlib import Path
 
-path = Path('')
 
 """Функція зчитує файл та виводить список словників з інформацією про тварин.
    Якщо у файлі пропущене одне зі значень або значення не є коректним
    виводить повідомлення про відсутність не добавляючи у список словників """
 def get_cats_info(path):
+
+    path = Path(path)
 
     cats_list = []
     id_list = set()
@@ -69,9 +70,3 @@ def get_cats_info(path):
 
     
     return cats_list
-
-    
-
-
-
-print(get_cats_info(path))

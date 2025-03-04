@@ -1,5 +1,5 @@
 from func import *
-from input_data import parse_input, correct_number
+from input_data import parse_input
 
 
 def main():
@@ -20,18 +20,10 @@ def main():
             print("How can I help you?")
         
         elif command == 'add' and len(args) == 2:
-
-            if correct_number(args[1]):
-                print(add_contact(contacts, args))
-            else:
-                print("Invalid symbol in number ")
+            print(add_contact(contacts, args))
 
         elif command == 'change' and len(args) == 2:
-            
-            if correct_number(args[1]):
-                print(change_contact(contacts, args))
-            else:
-                print("Invalid symbol in number ")
+            print(change_contact(contacts, args))
 
         elif command == 'phone' and len(args) == 1:
             print(show_phone(contacts, args))
